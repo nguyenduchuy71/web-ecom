@@ -106,18 +106,18 @@ export default function AboutPage() {
           Về {shopName}
         </p>
         <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-          Máy ảnh cũ, nhưng không phải "hên xui"
+          Máy ảnh cũ, nhưng không phải “hên xui”
         </h1>
         <div className="mt-4 max-w-2xl space-y-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
           <p>
             {shopName} bắt đầu từ việc mình cũng từng là người đi mua máy ảnh cũ và ngán ngẩm
-            với kiểu "máy đẹp 98%" nhưng về nhà mới phát hiện lỗi. Từ đó, tụi mình quyết định
+            với kiểu “máy đẹp 98%” nhưng về nhà mới phát hiện lỗi. Từ đó, tụi mình quyết định
             làm mọi thứ khác đi: mỗi chiếc máy trước khi lên kệ đều được kiểm tra kỹ, mô tả
             đúng tình trạng thật, không tô hồng.
           </p>
           <p>
             Vì là hàng second-hand nên mỗi máy là <strong className="text-zinc-800">một sản phẩm độc nhất</strong> —
-            không có chuyện "hết mẫu này còn mẫu khác giống hệt". Ảnh đăng bán là ảnh chụp thật
+            không có chuyện “hết mẫu này còn mẫu khác giống hệt”. Ảnh đăng bán là ảnh chụp thật
             của chính chiếc máy đó, kèm tình trạng thực tế để khách yên tâm trước khi quyết định.
           </p>
         </div>

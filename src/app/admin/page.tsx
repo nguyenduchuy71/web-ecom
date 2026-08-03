@@ -20,24 +20,31 @@ export default function AdminProductsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  async function loadProducts() {
-    setLoading(true);
-    const supabase = createClient();
-    const { data, error } = await supabase
-      .from('products')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      setError(error.message);
-    } else {
-      setProducts((data ?? []) as Product[]);
-    }
-    setLoading(false);
-  }
-
   useEffect(() => {
+    let cancelled = false;
+
+    async function loadProducts() {
+      const supabase = createClient();
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (cancelled) return;
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setProducts((data ?? []) as Product[]);
+      }
+      setLoading(false);
+    }
+
     loadProducts();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   async function handleDelete(product: Product) {
